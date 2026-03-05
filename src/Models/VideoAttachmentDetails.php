@@ -9,7 +9,7 @@ use BushlanovDev\MaxMessengerBot\Models\Attachments\Payloads\PhotoAttachmentRequ
 /**
  * Contains detailed information about a video attachment.
  */
-final readonly class VideoAttachmentDetails extends AbstractModel
+final class VideoAttachmentDetails extends AbstractModel
 {
     /**
      * @param string $token The video attachment token.
@@ -20,12 +20,12 @@ final readonly class VideoAttachmentDetails extends AbstractModel
      * @param PhotoAttachmentRequestPayload|null $thumbnail The video's thumbnail image information.
      */
     public function __construct(
-        public string $token,
-        public int $width,
-        public int $height,
-        public int $duration,
-        public ?VideoUrls $urls = null,
-        public ?PhotoAttachmentRequestPayload $thumbnail = null,
+        public readonly string $token,
+        public readonly int $width,
+        public readonly int $height,
+        public readonly int $duration,
+        public readonly ?VideoUrls $urls = null,
+        public readonly ?PhotoAttachmentRequestPayload $thumbnail = null,
     ) {
     }
 }

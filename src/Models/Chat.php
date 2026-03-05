@@ -10,7 +10,7 @@ use BushlanovDev\MaxMessengerBot\Enums\ChatType;
 /**
  * Information about the chat.
  */
-final readonly class Chat extends AbstractModel
+final class Chat extends AbstractModel
 {
     /**
      * @param int $chatId Chats identifier.
@@ -31,22 +31,22 @@ final readonly class Chat extends AbstractModel
      * @param array<string, int>|null $participants List of participants in chat. Returned only when single chat is requested.
      */
     public function __construct(
-        public int $chatId,
-        public ChatType $type,
-        public ChatStatus $status,
-        public int $lastEventTime,
-        public int $participantsCount,
-        public bool $isPublic,
-        public ?string $title,
-        public ?Image $icon,
-        public ?int $ownerId,
-        public ?string $link,
-        public ?string $description,
-        public ?UserWithPhoto $dialogWithUser,
-        public ?int $messagesCount,
-        public ?string $chatMessageId,
-        public ?Message $pinnedMessage,
-        public ?array $participants,
+        public readonly int $chatId,
+        public readonly ChatType $type,
+        public readonly ChatStatus $status,
+        public readonly int $lastEventTime,
+        public readonly int $participantsCount,
+        public readonly bool $isPublic,
+        public readonly ?string $title,
+        public readonly ?Image $icon,
+        public readonly ?int $ownerId,
+        public readonly ?string $link,
+        public readonly ?string $description,
+        public readonly ?UserWithPhoto $dialogWithUser,
+        public readonly ?int $messagesCount,
+        public readonly ?string $chatMessageId,
+        public readonly ?Message $pinnedMessage,
+        public readonly ?array $participants,
     ) {
     }
 }

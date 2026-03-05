@@ -10,7 +10,7 @@ use BushlanovDev\MaxMessengerBot\Models\UserWithPhoto;
 /**
  * You will receive this update when a user has been added to a chat where the bot is an administrator.
  */
-final readonly class UserAddedToChatUpdate extends AbstractUpdate
+final class UserAddedToChatUpdate extends AbstractUpdate
 {
     /**
      * @param int $timestamp Unix-time when the event has occurred.
@@ -22,10 +22,10 @@ final readonly class UserAddedToChatUpdate extends AbstractUpdate
      */
     public function __construct(
         int $timestamp,
-        public int $chatId,
-        public UserWithPhoto $user,
-        public ?int $inviterId,
-        public bool $isChannel,
+        public readonly int $chatId,
+        public readonly UserWithPhoto $user,
+        public readonly ?int $inviterId,
+        public readonly bool $isChannel,
     ) {
         parent::__construct(UpdateType::UserAdded, $timestamp);
     }

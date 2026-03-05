@@ -9,7 +9,7 @@ use BushlanovDev\MaxMessengerBot\Attributes\ArrayOf;
 /**
  * Represents a paginated list of chat members.
  */
-final readonly class ChatMembersList extends AbstractModel
+final class ChatMembersList extends AbstractModel
 {
     /**
      * @param ChatMember[] $members A list of chat members.
@@ -17,8 +17,8 @@ final readonly class ChatMembersList extends AbstractModel
      */
     public function __construct(
         #[ArrayOf(ChatMember::class)]
-        public array $members,
-        public ?int $marker,
+        public readonly array $members,
+        public readonly ?int $marker,
     ) {
     }
 }

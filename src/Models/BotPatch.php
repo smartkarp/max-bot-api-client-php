@@ -18,6 +18,6 @@ use BushlanovDev\MaxMessengerBot\Models\Attachments\Payloads\PhotoAttachmentRequ
  * @property-read PhotoAttachmentRequestPayload|null $photo
  * @property-read string|null $name @deprecated Use first_name
  */
-final readonly class BotPatch extends AbstractPatchModel
+final class BotPatch extends AbstractPatchModel
 {
 }

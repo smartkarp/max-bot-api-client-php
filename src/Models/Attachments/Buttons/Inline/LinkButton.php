@@ -9,7 +9,7 @@ use BushlanovDev\MaxMessengerBot\Enums\InlineButtonType;
 /**
  * Makes a user to follow a link.
  */
-final readonly class LinkButton extends AbstractInlineButton
+final class LinkButton extends AbstractInlineButton
 {
     public string $url;
 

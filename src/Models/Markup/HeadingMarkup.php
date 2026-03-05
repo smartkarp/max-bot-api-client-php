@@ -9,7 +9,7 @@ use BushlanovDev\MaxMessengerBot\Enums\MarkupType;
 /**
  * Represents a # header part of the text.
  */
-final readonly class HeadingMarkup extends AbstractMarkup
+final class HeadingMarkup extends AbstractMarkup
 {
     /**
      * @param int $from Element start index (zero-based) in text.

@@ -10,7 +10,7 @@ use BushlanovDev\MaxMessengerBot\Enums\ChatAdminPermission;
 /**
  * Represents a member of a chat, including their user information and chat-specific status.
  */
-final readonly class ChatMember extends AbstractUser
+final class ChatMember extends AbstractUser
 {
     /**
      * @param int $userId User's identifier.
@@ -36,16 +36,16 @@ final readonly class ChatMember extends AbstractUser
         ?string $username,
         bool $isBot,
         int $lastActivityTime,
-        public ?string $description,
-        public ?string $avatarUrl,
-        public ?string $fullAvatarUrl,
-        public int $lastAccessTime,
-        public bool $isOwner,
-        public bool $isAdmin,
-        public int $joinTime,
+        public readonly ?string $description,
+        public readonly ?string $avatarUrl,
+        public readonly ?string $fullAvatarUrl,
+        public readonly int $lastAccessTime,
+        public readonly bool $isOwner,
+        public readonly bool $isAdmin,
+        public readonly int $joinTime,
         #[ArrayOf(ChatAdminPermission::class)]
-        public ?array $permissions,
-        public ?string $alias,
+        public readonly ?array $permissions,
+        public readonly ?string $alias,
     ) {
         parent::__construct($userId, $firstName, $lastName, $username, $isBot, $lastActivityTime);
     }

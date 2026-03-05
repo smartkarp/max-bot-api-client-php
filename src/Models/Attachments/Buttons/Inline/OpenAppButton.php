@@ -9,7 +9,7 @@ use BushlanovDev\MaxMessengerBot\Enums\InlineButtonType;
 /**
  * Opens the bot's mini-application.
  */
-final readonly class OpenAppButton extends AbstractInlineButton
+final class OpenAppButton extends AbstractInlineButton
 {
     public ?string $webApp;
     public ?int $contactId;

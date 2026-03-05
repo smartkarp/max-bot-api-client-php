@@ -10,7 +10,7 @@ use Psr\Log\LoggerInterface;
 /**
  * Handles receiving updates via long polling.
  */
-final readonly class LongPollingHandler
+final class LongPollingHandler
 {
     /**
      * @param Api $api
@@ -19,9 +19,9 @@ final readonly class LongPollingHandler
      * @codeCoverageIgnore
      */
     public function __construct(
-        private Api $api,
-        private UpdateDispatcher $dispatcher,
-        private LoggerInterface $logger,
+        private readonly Api $api,
+        private readonly UpdateDispatcher $dispatcher,
+        private readonly LoggerInterface $logger,
     ) {
         if (!(\PHP_SAPI === 'cli')) {
             throw new \RuntimeException('LongPollingHandler can only be used in CLI mode.');

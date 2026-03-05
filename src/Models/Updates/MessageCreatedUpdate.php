@@ -10,7 +10,7 @@ use BushlanovDev\MaxMessengerBot\Models\Message;
 /**
  * You will get this `update` as soon as message is created.
  */
-final readonly class MessageCreatedUpdate extends AbstractUpdate
+final class MessageCreatedUpdate extends AbstractUpdate
 {
     /**
      * @param int $timestamp Unix-time when event has occurred.
@@ -19,8 +19,8 @@ final readonly class MessageCreatedUpdate extends AbstractUpdate
      */
     public function __construct(
         int $timestamp,
-        public Message $message,
-        public ?string $userLocale,
+        public readonly Message $message,
+        public readonly ?string $userLocale,
     ) {
         parent::__construct(UpdateType::MessageCreated, $timestamp);
     }

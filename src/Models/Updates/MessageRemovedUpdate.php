@@ -9,7 +9,7 @@ use BushlanovDev\MaxMessengerBot\Enums\UpdateType;
 /**
  * You will get this update as soon as a message is removed.
  */
-final readonly class MessageRemovedUpdate extends AbstractUpdate
+final class MessageRemovedUpdate extends AbstractUpdate
 {
     /**
      * @param int $timestamp Unix-time when the event has occurred.
@@ -19,9 +19,9 @@ final readonly class MessageRemovedUpdate extends AbstractUpdate
      */
     public function __construct(
         int $timestamp,
-        public string $messageId,
-        public int $chatId,
-        public int $userId,
+        public readonly string $messageId,
+        public readonly int $chatId,
+        public readonly int $userId,
     ) {
         parent::__construct(UpdateType::MessageRemoved, $timestamp);
     }

@@ -80,7 +80,7 @@ use ReflectionException;
 /**
  * Creates DTOs from raw associative arrays returned by the API client.
  */
-readonly class ModelFactory
+class ModelFactory
 {
     private LoggerInterface $logger;
 

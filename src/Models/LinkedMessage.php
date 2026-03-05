@@ -9,7 +9,7 @@ use BushlanovDev\MaxMessengerBot\Enums\MessageLinkType;
 /**
  * Represents a forwarded or replied message linked to the main message.
  */
-final readonly class LinkedMessage extends AbstractModel
+final class LinkedMessage extends AbstractModel
 {
     /**
      * @param MessageLinkType $type Type of linked message (forward or reply).
@@ -18,10 +18,10 @@ final readonly class LinkedMessage extends AbstractModel
      * @param int|null $chatId The chat where the message was originally posted (for forwarded messages).
      */
     public function __construct(
-        public MessageLinkType $type,
-        public MessageBody $message,
-        public ?UserWithPhoto $sender,
-        public ?int $chatId,
+        public readonly MessageLinkType $type,
+        public readonly MessageBody $message,
+        public readonly ?UserWithPhoto $sender,
+        public readonly ?int $chatId,
     ) {
     }
 }

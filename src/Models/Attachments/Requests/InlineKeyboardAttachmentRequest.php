@@ -8,7 +8,7 @@ use BushlanovDev\MaxMessengerBot\Enums\AttachmentType;
 use BushlanovDev\MaxMessengerBot\Models\Attachments\Buttons\Inline\AbstractInlineButton;
 use BushlanovDev\MaxMessengerBot\Models\Attachments\Payloads\InlineKeyboardAttachmentRequestPayload;
 
-final readonly class InlineKeyboardAttachmentRequest extends AbstractAttachmentRequest
+final class InlineKeyboardAttachmentRequest extends AbstractAttachmentRequest
 {
     /**
      * @param AbstractInlineButton[][] $buttons

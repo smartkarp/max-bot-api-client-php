@@ -10,7 +10,7 @@ use BushlanovDev\MaxMessengerBot\Models\UserWithPhoto;
 /**
  * The bot receives this type of update as soon as the user stops the bot.
  */
-final readonly class BotStoppedUpdate extends AbstractUpdate
+final class BotStoppedUpdate extends AbstractUpdate
 {
     /**
      * @param int $timestamp Unix-time when event has occurred.
@@ -20,9 +20,9 @@ final readonly class BotStoppedUpdate extends AbstractUpdate
      */
     public function __construct(
         int $timestamp,
-        public int $chatId,
-        public UserWithPhoto $user,
-        public ?string $userLocale,
+        public readonly int $chatId,
+        public readonly UserWithPhoto $user,
+        public readonly ?string $userLocale,
     ) {
         parent::__construct(UpdateType::BotStopped, $timestamp);
     }

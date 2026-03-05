@@ -9,7 +9,7 @@ use BushlanovDev\MaxMessengerBot\Attributes\ArrayOf;
 /**
  * Information about the current bot.
  */
-final readonly class BotInfo extends AbstractUser
+final class BotInfo extends AbstractUser
 {
     /**
      * @param int $userId ID user.
@@ -30,11 +30,11 @@ final readonly class BotInfo extends AbstractUser
         ?string $username,
         bool $isBot,
         int $lastActivityTime,
-        public ?string $description,
-        public ?string $avatarUrl,
-        public ?string $fullAvatarUrl,
+        public readonly ?string $description,
+        public readonly ?string $avatarUrl,
+        public readonly ?string $fullAvatarUrl,
         #[ArrayOf(BotCommand::class)]
-        public ?array $commands,
+        public readonly ?array $commands,
     ) {
         parent::__construct($userId, $firstName, $lastName, $username, $isBot, $lastActivityTime);
     }

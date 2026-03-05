@@ -11,7 +11,7 @@ use ReflectionException;
 use ReflectionNamedType;
 use ReflectionProperty;
 
-abstract readonly class AbstractModel
+abstract class AbstractModel
 {
     /**
      * @param array<string, mixed> $data

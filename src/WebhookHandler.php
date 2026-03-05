@@ -14,7 +14,7 @@ use Psr\Log\LoggerInterface;
  * It verifies the request's authenticity, parses it, and uses an UpdateDispatcher
  * to route it to the appropriate handler.
  */
-final readonly class WebhookHandler
+final class WebhookHandler
 {
     /**
      * @param UpdateDispatcher $dispatcher The update dispatcher.
@@ -23,10 +23,10 @@ final readonly class WebhookHandler
      * @param string|null $secret The secret key for request verification.
      */
     public function __construct(
-        private UpdateDispatcher $dispatcher,
-        private ModelFactory $modelFactory,
-        private LoggerInterface $logger,
-        private ?string $secret,
+        private readonly UpdateDispatcher $dispatcher,
+        private readonly ModelFactory $modelFactory,
+        private readonly LoggerInterface $logger,
+        private readonly ?string $secret,
     ) {
     }
 

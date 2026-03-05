@@ -6,7 +6,7 @@ namespace BushlanovDev\MaxMessengerBot\Models\Attachments\Buttons\Reply;
 
 use BushlanovDev\MaxMessengerBot\Enums\ReplyButtonType;
 
-final readonly class SendGeoLocationButton extends AbstractReplyButton
+final class SendGeoLocationButton extends AbstractReplyButton
 {
     /**
      * @param string $text Visible text of the button.
@@ -14,7 +14,7 @@ final readonly class SendGeoLocationButton extends AbstractReplyButton
      */
     public function __construct(
         string $text,
-        public bool $quick = false,
+        public readonly bool $quick = false,
     ) {
         parent::__construct(ReplyButtonType::UserGeoLocation, $text);
     }

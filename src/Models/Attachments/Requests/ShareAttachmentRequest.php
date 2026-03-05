@@ -10,7 +10,7 @@ use BushlanovDev\MaxMessengerBot\Models\Attachments\Payloads\ShareAttachmentRequ
 /**
  * Request to attach a media preview of an external URL.
  */
-final readonly class ShareAttachmentRequest extends AbstractAttachmentRequest
+final class ShareAttachmentRequest extends AbstractAttachmentRequest
 {
     /**
      * Creates a request to attach a URL preview.

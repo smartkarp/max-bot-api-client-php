@@ -9,7 +9,7 @@ use BushlanovDev\MaxMessengerBot\Enums\MarkupType;
 /**
  * Represents a **strong** (bold) part of the text.
  */
-final readonly class StrongMarkup extends AbstractMarkup
+final class StrongMarkup extends AbstractMarkup
 {
     /**
      * @param int $from Element start index (zero-based) in text.

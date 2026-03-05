@@ -10,7 +10,7 @@ use BushlanovDev\MaxMessengerBot\Enums\ChatAdminPermission;
 /**
  * Represents an administrator to be set in a chat, linking a user ID with their permissions.
  */
-final readonly class ChatAdmin extends AbstractModel
+final class ChatAdmin extends AbstractModel
 {
     /**
      * @param int $userId The identifier of the user to be made an admin.
@@ -18,10 +18,10 @@ final readonly class ChatAdmin extends AbstractModel
      * @param string|null $alias Alias of the user.
      */
     public function __construct(
-        public int $userId,
+        public readonly int $userId,
         #[ArrayOf(ChatAdminPermission::class)]
-        public array $permissions,
-        public ?string $alias = null,
+        public readonly array $permissions,
+        public readonly ?string $alias = null,
     ) {
     }
 }

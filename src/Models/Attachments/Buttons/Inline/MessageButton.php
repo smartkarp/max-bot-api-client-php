@@ -9,7 +9,7 @@ use BushlanovDev\MaxMessengerBot\Enums\InlineButtonType;
 /**
  * Button send text in chat from user.
  */
-final readonly class MessageButton extends AbstractInlineButton
+final class MessageButton extends AbstractInlineButton
 {
     /**
      * @param string $text Text sending in chat from user.

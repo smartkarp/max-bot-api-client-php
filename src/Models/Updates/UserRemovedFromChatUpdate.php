@@ -10,7 +10,7 @@ use BushlanovDev\MaxMessengerBot\Models\UserWithPhoto;
 /**
  * You will receive this update when a user has been removed from a chat where the bot is an administrator.
  */
-final readonly class UserRemovedFromChatUpdate extends AbstractUpdate
+final class UserRemovedFromChatUpdate extends AbstractUpdate
 {
     /**
      * @param int $timestamp Unix-time when the event has occurred.
@@ -22,10 +22,10 @@ final readonly class UserRemovedFromChatUpdate extends AbstractUpdate
      */
     public function __construct(
         int $timestamp,
-        public int $chatId,
-        public UserWithPhoto $user,
-        public ?int $adminId,
-        public bool $isChannel,
+        public readonly int $chatId,
+        public readonly UserWithPhoto $user,
+        public readonly ?int $adminId,
+        public readonly bool $isChannel,
     ) {
         parent::__construct(UpdateType::UserRemoved, $timestamp);
     }

@@ -10,7 +10,7 @@ use BushlanovDev\MaxMessengerBot\Models\Markup\AbstractMarkup;
 /**
  * Body of created message. Text + attachments.
  */
-final readonly class MessageBody extends AbstractModel
+final class MessageBody extends AbstractModel
 {
     /**
      * @param string $mid Unique identifier of message.
@@ -20,11 +20,11 @@ final readonly class MessageBody extends AbstractModel
      * @param AbstractMarkup[]|null $markup Message text markup.
      */
     public function __construct(
-        public string $mid,
-        public int $seq,
-        public ?string $text,
-        public ?array $attachments,
-        public ?array $markup,
+        public readonly string $mid,
+        public readonly int $seq,
+        public readonly ?string $text,
+        public readonly ?array $attachments,
+        public readonly ?array $markup,
     ) {
     }
 }

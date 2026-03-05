@@ -10,7 +10,7 @@ use BushlanovDev\MaxMessengerBot\Enums\Intent;
 /**
  * Sends a notification with payload to a bot (via WebHook or long polling).
  */
-final readonly class CallbackButton extends AbstractInlineButton
+final class CallbackButton extends AbstractInlineButton
 {
     public string $payload;
     public ?Intent $intent;

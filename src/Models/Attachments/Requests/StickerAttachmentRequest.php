@@ -10,7 +10,7 @@ use BushlanovDev\MaxMessengerBot\Models\Attachments\Payloads\StickerAttachmentRe
 /**
  * Request to attach a sticker to a message.
  */
-final readonly class StickerAttachmentRequest extends AbstractAttachmentRequest
+final class StickerAttachmentRequest extends AbstractAttachmentRequest
 {
     /**
      * @param string $code The unique code of the sticker.

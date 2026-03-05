@@ -9,7 +9,7 @@ use BushlanovDev\MaxMessengerBot\Enums\MarkupType;
 /**
  * Represents an *emphasized* (italic) part of the text.
  */
-final readonly class EmphasizedMarkup extends AbstractMarkup
+final class EmphasizedMarkup extends AbstractMarkup
 {
     /**
      * @param int $from Element start index (zero-based) in text.

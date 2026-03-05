@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace BushlanovDev\MaxMessengerBot\Models;
 
-abstract readonly class AbstractUser extends AbstractModel
+abstract class AbstractUser extends AbstractModel
 {
     /**
      * @param int $userId Users identifier.
@@ -16,12 +16,12 @@ abstract readonly class AbstractUser extends AbstractModel
      *                              Can be outdated if user disabled its "online" status in settings.
      */
     public function __construct(
-        public int $userId,
-        public string $firstName,
-        public ?string $lastName,
-        public ?string $username,
-        public bool $isBot,
-        public int $lastActivityTime,
+        public readonly int $userId,
+        public readonly string $firstName,
+        public readonly ?string $lastName,
+        public readonly ?string $username,
+        public readonly bool $isBot,
+        public readonly int $lastActivityTime,
     ) {
     }
 }

@@ -10,7 +10,7 @@ use BushlanovDev\MaxMessengerBot\Models\Message;
 /**
  * You will get this update as soon as a message is edited.
  */
-final readonly class MessageEditedUpdate extends AbstractUpdate
+final class MessageEditedUpdate extends AbstractUpdate
 {
     /**
      * @param int $timestamp Unix-time when the event has occurred.
@@ -18,7 +18,7 @@ final readonly class MessageEditedUpdate extends AbstractUpdate
      */
     public function __construct(
         int $timestamp,
-        public Message $message,
+        public readonly Message $message,
     ) {
         parent::__construct(UpdateType::MessageEdited, $timestamp);
     }

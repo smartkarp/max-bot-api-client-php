@@ -7,12 +7,12 @@ namespace BushlanovDev\MaxMessengerBot\Attributes;
 use Attribute;
 
 #[Attribute(Attribute::TARGET_PROPERTY)]
-final readonly class ArrayOf
+final class ArrayOf
 {
     /**
      * @param class-string $class Class name (model or enum)
      */
-    public function __construct(public string $class)
+    public function __construct(public readonly string $class)
     {
     }
 }

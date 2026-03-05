@@ -10,7 +10,7 @@ use BushlanovDev\MaxMessengerBot\Models\UserWithPhoto;
 /**
  * Event deleting a chat.
  */
-final readonly class DialogRemovedUpdate extends AbstractUpdate
+final class DialogRemovedUpdate extends AbstractUpdate
 {
     /**
      * @param int $timestamp Unix-time when event has occurred.
@@ -20,9 +20,9 @@ final readonly class DialogRemovedUpdate extends AbstractUpdate
      */
     public function __construct(
         int $timestamp,
-        public int $chatId,
-        public UserWithPhoto $user,
-        public ?string $userLocale,
+        public readonly int $chatId,
+        public readonly UserWithPhoto $user,
+        public readonly ?string $userLocale,
     ) {
         parent::__construct(UpdateType::DialogRemoved, $timestamp);
     }

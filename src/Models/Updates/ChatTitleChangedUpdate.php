@@ -10,7 +10,7 @@ use BushlanovDev\MaxMessengerBot\Models\UserWithPhoto;
 /**
  * Bot gets this type of update as soon as the title has been changed in a chat.
  */
-final readonly class ChatTitleChangedUpdate extends AbstractUpdate
+final class ChatTitleChangedUpdate extends AbstractUpdate
 {
     /**
      * @param int $timestamp Unix-time when the event has occurred.
@@ -20,9 +20,9 @@ final readonly class ChatTitleChangedUpdate extends AbstractUpdate
      */
     public function __construct(
         int $timestamp,
-        public int $chatId,
-        public UserWithPhoto $user,
-        public string $title,
+        public readonly int $chatId,
+        public readonly UserWithPhoto $user,
+        public readonly string $title,
     ) {
         parent::__construct(UpdateType::ChatTitleChanged, $timestamp);
     }

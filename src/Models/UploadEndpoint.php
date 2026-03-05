@@ -7,15 +7,15 @@ namespace BushlanovDev\MaxMessengerBot\Models;
 /**
  * Endpoint you should upload to your binaries
  */
-final readonly class UploadEndpoint extends AbstractModel
+final class UploadEndpoint extends AbstractModel
 {
     /**
      * @param string $url URL to upload.
      * @param string|null $token Video or audio token for send message.
      */
     public function __construct(
-        public string $url,
-        public ?string $token = null,
+        public readonly string $url,
+        public readonly ?string $token = null,
     ) {
     }
 }

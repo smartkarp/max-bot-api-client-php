@@ -7,7 +7,7 @@ namespace BushlanovDev\MaxMessengerBot\Models\Attachments;
 use BushlanovDev\MaxMessengerBot\Enums\AttachmentType;
 use BushlanovDev\MaxMessengerBot\Models\Attachments\Payloads\StickerAttachmentPayload;
 
-final readonly class StickerAttachment extends AbstractAttachment
+final class StickerAttachment extends AbstractAttachment
 {
     /**
      * @param StickerAttachmentPayload $payload Sticker attachment payload.
@@ -15,9 +15,9 @@ final readonly class StickerAttachment extends AbstractAttachment
      * @param int $height
      */
     public function __construct(
-        public StickerAttachmentPayload $payload,
-        public int $width,
-        public int $height,
+        public readonly StickerAttachmentPayload $payload,
+        public readonly int $width,
+        public readonly int $height,
     ) {
         parent::__construct(AttachmentType::Sticker);
     }

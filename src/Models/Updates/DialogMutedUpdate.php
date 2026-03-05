@@ -10,7 +10,7 @@ use BushlanovDev\MaxMessengerBot\Models\UserWithPhoto;
 /**
  * Event when a user mutes a conversation with a bot.
  */
-final readonly class DialogMutedUpdate extends AbstractUpdate
+final class DialogMutedUpdate extends AbstractUpdate
 {
     /**
      * @param int $timestamp Unix-time when event has occurred.
@@ -21,10 +21,10 @@ final readonly class DialogMutedUpdate extends AbstractUpdate
      */
     public function __construct(
         int $timestamp,
-        public int $chatId,
-        public UserWithPhoto $user,
-        public ?int $mutedUntil,
-        public ?string $userLocale,
+        public readonly int $chatId,
+        public readonly UserWithPhoto $user,
+        public readonly ?int $mutedUntil,
+        public readonly ?string $userLocale,
     ) {
         parent::__construct(UpdateType::DialogMuted, $timestamp);
     }

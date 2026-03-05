@@ -11,11 +11,11 @@ use BushlanovDev\MaxMessengerBot\Models\Attachments\Payloads\AbstractAttachmentR
 /**
  * Message attachments.
  */
-abstract readonly class AbstractAttachmentRequest extends AbstractModel
+abstract class AbstractAttachmentRequest extends AbstractModel
 {
     public function __construct(
-        public AttachmentType $type,
-        public AbstractAttachmentRequestPayload $payload,
+        public readonly AttachmentType $type,
+        public readonly AbstractAttachmentRequestPayload $payload,
     ) {
     }
 }

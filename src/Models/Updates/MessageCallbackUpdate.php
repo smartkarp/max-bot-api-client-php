@@ -11,7 +11,7 @@ use BushlanovDev\MaxMessengerBot\Models\Message;
 /**
  * You will get this update as soon as a user presses a callback button.
  */
-final readonly class MessageCallbackUpdate extends AbstractUpdate
+final class MessageCallbackUpdate extends AbstractUpdate
 {
     /**
      * @param int $timestamp Unix-time when event has occurred.
@@ -21,9 +21,9 @@ final readonly class MessageCallbackUpdate extends AbstractUpdate
      */
     public function __construct(
         int $timestamp,
-        public Callback $callback,
-        public ?Message $message,
-        public ?string $userLocale,
+        public readonly Callback $callback,
+        public readonly ?Message $message,
+        public readonly ?string $userLocale,
     ) {
         parent::__construct(UpdateType::MessageCallback, $timestamp);
     }

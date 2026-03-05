@@ -10,9 +10,9 @@ use BushlanovDev\MaxMessengerBot\Models\AbstractModel;
 /**
  * Represents a generic attachment received from the API.
  */
-abstract readonly class AbstractAttachment extends AbstractModel
+abstract class AbstractAttachment extends AbstractModel
 {
-    public function __construct(public AttachmentType $type)
+    public function __construct(public readonly AttachmentType $type)
     {
     }
 }

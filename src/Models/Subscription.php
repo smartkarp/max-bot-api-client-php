@@ -10,7 +10,7 @@ use BushlanovDev\MaxMessengerBot\Enums\UpdateType;
 /**
  * Information about webhook subscriptions.
  */
-final readonly class Subscription extends AbstractModel
+final class Subscription extends AbstractModel
 {
     /**
      * @param string $url URL webhook.
@@ -19,11 +19,11 @@ final readonly class Subscription extends AbstractModel
      * @param string|null $version Version of the API.
      */
     public function __construct(
-        public string $url,
-        public int $time,
+        public readonly string $url,
+        public readonly int $time,
         #[ArrayOf(UpdateType::class)]
-        public ?array $updateTypes,
-        public ?string $version,
+        public readonly ?array $updateTypes,
+        public readonly ?string $version,
     ) {
     }
 }

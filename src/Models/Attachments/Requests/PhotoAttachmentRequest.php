@@ -11,7 +11,7 @@ use BushlanovDev\MaxMessengerBot\Models\Attachments\Payloads\PhotoToken;
 /**
  * Request to attach some data to message.
  */
-final readonly class PhotoAttachmentRequest extends AbstractAttachmentRequest
+final class PhotoAttachmentRequest extends AbstractAttachmentRequest
 {
     /**
      * Creates a request to attach an image by URL.

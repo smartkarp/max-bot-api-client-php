@@ -7,7 +7,7 @@ namespace BushlanovDev\MaxMessengerBot\Models\Attachments\Buttons\Reply;
 use BushlanovDev\MaxMessengerBot\Enums\Intent;
 use BushlanovDev\MaxMessengerBot\Enums\ReplyButtonType;
 
-final readonly class SendMessageButton extends AbstractReplyButton
+final class SendMessageButton extends AbstractReplyButton
 {
     /**
      * @param string $text Visible text of the button.
@@ -16,8 +16,8 @@ final readonly class SendMessageButton extends AbstractReplyButton
      */
     public function __construct(
         string $text,
-        public ?string $payload = null,
-        public Intent $intent = Intent::Default,
+        public readonly ?string $payload = null,
+        public readonly Intent $intent = Intent::Default,
     ) {
         parent::__construct(ReplyButtonType::Message, $text);
     }

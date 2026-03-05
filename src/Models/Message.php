@@ -7,7 +7,7 @@ namespace BushlanovDev\MaxMessengerBot\Models;
 /**
  * Message.
  */
-final readonly class Message extends AbstractModel
+final class Message extends AbstractModel
 {
     /**
      * @param int $timestamp Unix-time when message was created.
@@ -22,16 +22,16 @@ final readonly class Message extends AbstractModel
      * @param string|null $messageId Unique identifier of message.
      */
     public function __construct(
-        public int $timestamp,
-        public Recipient $recipient,
-        public ?MessageBody $body,
-        public ?UserWithPhoto $sender,
-        public ?string $url,
-        public ?LinkedMessage $link,
-        public ?MessageStat $stat,
-        public ?int $chatId = null,
-        public ?int $recipientId = null,
-        public ?string $messageId = null,
+        public readonly int $timestamp,
+        public readonly Recipient $recipient,
+        public readonly ?MessageBody $body,
+        public readonly ?UserWithPhoto $sender,
+        public readonly ?string $url,
+        public readonly ?LinkedMessage $link,
+        public readonly ?MessageStat $stat,
+        public readonly ?int $chatId = null,
+        public readonly ?int $recipientId = null,
+        public readonly ?string $messageId = null,
     ) {
     }
 }

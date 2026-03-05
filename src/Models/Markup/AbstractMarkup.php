@@ -10,7 +10,7 @@ use BushlanovDev\MaxMessengerBot\Models\AbstractModel;
 /**
  * Base class for a text markup element.
  */
-abstract readonly class AbstractMarkup extends AbstractModel
+abstract class AbstractMarkup extends AbstractModel
 {
     /**
      * @param MarkupType $type The type of the markup element.
@@ -18,9 +18,9 @@ abstract readonly class AbstractMarkup extends AbstractModel
      * @param int $length Length of the markup element.
      */
     public function __construct(
-        public MarkupType $type,
-        public int $from,
-        public int $length,
+        public readonly MarkupType $type,
+        public readonly int $from,
+        public readonly int $length,
     ) {
     }
 }

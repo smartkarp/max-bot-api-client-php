@@ -7,7 +7,7 @@ namespace BushlanovDev\MaxMessengerBot\Models\Attachments\Payloads;
 /**
  * Payload for a contact attachment request.
  */
-final readonly class ContactAttachmentRequestPayload extends AbstractAttachmentRequestPayload
+final class ContactAttachmentRequestPayload extends AbstractAttachmentRequestPayload
 {
     /**
      * @param string|null $name Contact name.
@@ -16,10 +16,10 @@ final readonly class ContactAttachmentRequestPayload extends AbstractAttachmentR
      * @param string|null $vcfPhone Contact phone in VCF format.
      */
     public function __construct(
-        public ?string $name = null,
-        public ?int $contactId = null,
-        public ?string $vcfInfo = null,
-        public ?string $vcfPhone = null,
+        public readonly ?string $name = null,
+        public readonly ?int $contactId = null,
+        public readonly ?string $vcfInfo = null,
+        public readonly ?string $vcfPhone = null,
     ) {
     }
 }

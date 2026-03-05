@@ -10,7 +10,7 @@ use BushlanovDev\MaxMessengerBot\Models\Attachments\Payloads\UploadedInfoAttachm
 /**
  * Request to attach a generic file to a message.
  */
-final readonly class FileAttachmentRequest extends AbstractAttachmentRequest
+final class FileAttachmentRequest extends AbstractAttachmentRequest
 {
     /**
      * @param string $token The unique token received after a successful file upload.

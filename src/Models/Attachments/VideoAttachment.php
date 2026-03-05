@@ -8,7 +8,7 @@ use BushlanovDev\MaxMessengerBot\Enums\AttachmentType;
 use BushlanovDev\MaxMessengerBot\Models\Attachments\Payloads\MediaAttachmentPayload;
 use BushlanovDev\MaxMessengerBot\Models\Attachments\Payloads\VideoThumbnail;
 
-final readonly class VideoAttachment extends AbstractAttachment
+final class VideoAttachment extends AbstractAttachment
 {
     /**
      * @param MediaAttachmentPayload $payload Video attachment payload.
@@ -18,11 +18,11 @@ final readonly class VideoAttachment extends AbstractAttachment
      * @param int|null $duration Video duration in seconds.
      */
     public function __construct(
-        public MediaAttachmentPayload $payload,
-        public ?VideoThumbnail $thumbnail,
-        public ?int $width,
-        public ?int $height,
-        public ?int $duration,
+        public readonly MediaAttachmentPayload $payload,
+        public readonly ?VideoThumbnail $thumbnail,
+        public readonly ?int $width,
+        public readonly ?int $height,
+        public readonly ?int $duration,
     ) {
         parent::__construct(AttachmentType::Video);
     }

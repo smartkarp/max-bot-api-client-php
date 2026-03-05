@@ -11,7 +11,7 @@ use BushlanovDev\MaxMessengerBot\Models\Chat;
  * Bot will get this update when a chat has been created as soon as
  * the first user clicked a `chat` button.
  */
-final readonly class MessageChatCreatedUpdate extends AbstractUpdate
+final class MessageChatCreatedUpdate extends AbstractUpdate
 {
     /**
      * @param int $timestamp Unix-time when the event has occurred.
@@ -21,9 +21,9 @@ final readonly class MessageChatCreatedUpdate extends AbstractUpdate
      */
     public function __construct(
         int $timestamp,
-        public Chat $chat,
-        public string $messageId,
-        public ?string $startPayload,
+        public readonly Chat $chat,
+        public readonly string $messageId,
+        public readonly ?string $startPayload,
     ) {
         parent::__construct(UpdateType::MessageChatCreated, $timestamp);
     }

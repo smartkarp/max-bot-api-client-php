@@ -10,15 +10,15 @@ use BushlanovDev\MaxMessengerBot\Models\UserWithPhoto;
 /**
  * Payload of a contact attachment.
  */
-final readonly class ContactAttachmentPayload extends AbstractModel
+final class ContactAttachmentPayload extends AbstractModel
 {
     /**
      * @param string|null $vcfInfo User info in VCF format.
      * @param UserWithPhoto|null $maxInfo User info if the contact is a Max user.
      */
     public function __construct(
-        public ?string $vcfInfo,
-        public ?UserWithPhoto $maxInfo,
+        public readonly ?string $vcfInfo,
+        public readonly ?UserWithPhoto $maxInfo,
     ) {
     }
 }

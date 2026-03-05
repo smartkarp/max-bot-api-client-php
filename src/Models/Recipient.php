@@ -9,7 +9,7 @@ use BushlanovDev\MaxMessengerBot\Enums\ChatType;
 /**
  * Message recipient. Could be user or chat.
  */
-final readonly class Recipient extends AbstractModel
+final class Recipient extends AbstractModel
 {
     /**
      * @param ChatType $chatType Chat type (dialog, chat or channel).
@@ -17,9 +17,9 @@ final readonly class Recipient extends AbstractModel
      * @param int|null $chatId Chat identifier.
      */
     public function __construct(
-        public ChatType $chatType,
-        public ?int $userId,
-        public ?int $chatId,
+        public readonly ChatType $chatType,
+        public readonly ?int $userId,
+        public readonly ?int $chatId,
     ) {
     }
 }

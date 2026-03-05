@@ -9,12 +9,12 @@ use BushlanovDev\MaxMessengerBot\Enums\AttachmentType;
 /**
  * Represents an attachment containing a payload from a SendMessageButton.
  */
-final readonly class DataAttachment extends AbstractAttachment
+final class DataAttachment extends AbstractAttachment
 {
     /**
      * @param string $data The payload from the button.
      */
-    public function __construct(public string $data)
+    public function __construct(public readonly string $data)
     {
         parent::__construct(AttachmentType::Data);
     }

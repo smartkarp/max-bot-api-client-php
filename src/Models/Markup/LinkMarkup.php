@@ -9,7 +9,7 @@ use BushlanovDev\MaxMessengerBot\Enums\MarkupType;
 /**
  * Represents a link in the text.
  */
-final readonly class LinkMarkup extends AbstractMarkup
+final class LinkMarkup extends AbstractMarkup
 {
     /**
      * @param int $from Element start index (zero-based) in text.
@@ -19,7 +19,7 @@ final readonly class LinkMarkup extends AbstractMarkup
     public function __construct(
         int $from,
         int $length,
-        public string $url,
+        public readonly string $url,
     ) {
         parent::__construct(MarkupType::Link, $from, $length);
     }
